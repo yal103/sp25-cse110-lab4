@@ -30,3 +30,13 @@ values added: 20
 5. What is printed by line 13? If the code returns an error, explain why.
 
 > The code returns an **error**. Since `let` has block scope, `result` is only accessible inside the `if` block it was declared in. Since line 13 is outside of the `if` block, trying to access `result` with return an error.
+
+![image3](images/image3.png)
+
+6. What is printed by line 9? If the code returns an error, explain why. ^^^^^
+
+> The code returns an **error** before line 9 is reached. `result`, which was declared using `const`, tries to get reassigned in line 7, which is not allowed. This causes the code to return an error and terminate before line 9 is reached.
+
+7. What is printed by line 13? If the code returns an error, explain why.
+
+> The code returns an **error**. From question 6, the code returns an error in line 7 and terminates before line 13 is reached. Even if `result` were not reassigned and line 13 were reached, the code would still return an **error** as `result` was declared using `const` inside the `if` block, so `result` would not be accessible outside of the `if` block, where line 13 is located.
