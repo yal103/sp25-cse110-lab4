@@ -1,6 +1,6 @@
 # Part 1. A Quick Introduction...
 
-![image1](image1.png)
+![image1](images/image1.png)
 
 1. What is printed by line 9? If the code returns an error, explain why. ^^^^^
 
@@ -19,7 +19,7 @@ final result: 20
 
 > You should **not use** `var` because it has function scope or global scope (if a variable is declared using `var` outside a function), which can cause unexpected behavior in the code. This may cause a variable to be accessible somewhere it should not be. `var` declarations are also hoisted to the top of their scope and initialized with `undefined`, which can lead to other unexpected behaviors.
 
-![image2](image2.png)
+![image2](images/image2.png)
 
 4. What is printed by line 9? If the code returns an error, explain why. ^^^^^
 
