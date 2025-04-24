@@ -6,7 +6,7 @@ For this section (questions 1-7), observe the effect that the keywords *const*, 
 
 THe var keyword USED TO provide its variable with what is known as **function scope**. This means that regardless of the block it is defined in, it can be accessed anywhere inside the function it is defined in. In the past, using var to declare your variables in your programs led to naming conflicts and scoping issues.
 
-![image1](images/image1.png)
+![image1](images_pt1/image1.png)
 
 1. What is printed by line 9? If the code returns an error, explain why. ^^^^^
 
@@ -25,7 +25,7 @@ final result: 20
 
 > You should **not use** `var` because it has function scope or global scope (if a variable is declared using `var` outside a function), which can cause unexpected behavior in the code. This may cause a variable to be accessible somewhere it should not be. `var` declarations are also hoisted to the top of their scope and initialized with `undefined`, which can lead to other unexpected behaviors.
 
-![image2](images/image2.png)
+![image2](images_pt1/image2.png)
 
 4. What is printed by line 9? If the code returns an error, explain why. ^^^^^
 
@@ -41,7 +41,7 @@ values added: 20
 
 The const keyword gives its variable the same scope as the let keyword. Declaring a variable with the const prevents it from being reassigned after it is assigned for the first time, much like the final keyword in Java, making it useful for declaring constants in your programs.
 
-![image3](images/image3.png)
+![image3](images_pt1/image3.png)
 
 6. What is printed by line 9? If the code returns an error, explain why. ^^^^^
 
