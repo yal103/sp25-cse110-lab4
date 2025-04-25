@@ -114,3 +114,115 @@ In this next section, use what you understand about the differences between decl
 ```
 
 > When `discountPrices` is called with inputs `prices = [100, 200, 300]` and `discount = 0.5`, `discounted` is set to an empty array `[]` using `const`. Over the `for` loop, each price in `prices` is discounted by 50% and added to the `discounted` array. So, at the end of the loop, `discounted` will be `[50 100, 150]`. Note that `discounted` was initially declared using `const`, but it is not reassigned at any point in the function. The code in the `for` loop only mutates the `discounted` array by adding new elements to it, which will not throw an error. Therefore, the function will return `discounted`, which is `[50, 100, 150]`.
+
+## Data Types
+
+There are 9 data types in JavaScript. Unlike in other languages, JavaScript lets you assign any data type to any variable at any time, since variables aren't initialized as a single type.
+
+Primitive data types in JavaScript behave the same as most other languages, the tricky part with them will be conversions and comparisons which we will get to in the next section. Here, we're going to focus on Objects. If you have seen JSON (JavaScript Object Notation), before, then you are familiar with their format.
+
+![image12](images_pt2/image12.png)
+
+12. Given the above Object, write the notation for:
+
+    A. Accessing the value of the name property in the student object
+
+        student.name
+    
+    B. Accessing the value of the Grad Year property in the student object
+
+        student['Grad Year']
+
+    C. Calling the function for the greeting property in the student object
+
+        student.greeting()
+
+    D. Accessing the name property of the object in the Favorite Teacher property in student
+
+        student['Favorite Teacher'].name
+
+
+    E. Access index zero in the array of the courseLoad property of the student object
+
+        student.courseLoad[0]
+
+## Basic Operators & Type Conversion
+
+One of the key parts of JavaScript is its weak typing, meaning that a single variable can take multiple data types (i.e. a variable initially declared as a string can legally be reassigned to an integer). Because of this, JavaScript is also designed to be able to compute operations between variables of different data types meaning we can do things like adding a string and an int (what?).
+
+JavaScript is able to do this because it is able to map the value of a variable from oen data type to another. For example,
+
+* true + 10 = 11 since true maps to 1
+* 3 + '5' = '35' since integers map to their exact string representation
+* 'hi there' + {} = 'hi there [object Object]' since objects map to the string '[object Object]'
+* ...and there are many more examples
+
+While this is one of its greatest strengths, it can cause a lot of confusion for developers who don't fully understand how types are converted. However, what we can rely on is the fact that the conversions between data types are consistent and can be looked up on the internet easily.
+
+What is important is the understanding that type conversions occur automatically and without warning which can help you identify strange bugs or create helpful shortcuts.
+
+For each of the following questions, note down the output as well as a brief explanation why that output was given
+
+13. Arithemtic
+    
+    A. '3' + 2
+
+    > The output will be the string `'32'`. `+` is the string concatenation operator when there is at least one string. Integers map to their exact string representation, so the integer `2` is converted to the string `'2'` and concatenated with the string `'3'`, resulting in `'32'`.
+
+    B. '3' - 2
+
+    > The output is the integer `1`. `-` is the subtraction operation, which only works with numbers. The string `'3'` is converted to the integer `3`, and is subtracted by `2`, resulting in `1`.
+
+    C. 3 + null
+
+    > The output is the integer `3`. `null` is converted to the integer `0`, so we have `3 + 0 = 3`.
+
+    D. '3' + null
+
+    > The output is the string `'3null'`. `null` is converted to the string `'null'` and concatenated with the string `'3'`, so the output is `'3null'`.
+
+    E. true + 3
+
+    > The output is the integer `4`. `true` is converted to the integer `1`, so we have `1 + 3 = 4`.
+
+    F. false + null
+
+    > The output is the integer `0`. `false` and `null` are both converted to the integer `0`, so we have `0 + 0 = 0`.
+
+    G. '3' + undefined
+
+    > The output is the string `'3undefined'`. `undefined` is converted to the string `'undefined'` and is concatenated with the string `'3'`, so the output is `'3undefined'`.
+
+    H. '3' - undefined
+
+    > The output is `NaN`. While `'3'` can be converted to the integer `3`, `undefined` cannot be converted to a number, so the result is `NaN` (Not a Number).
+
+14. Comparison
+    
+    A. '2' > 1
+
+    > The output is `true`. The string `'2'` is converted to the integer `2`, and `2 > 1` is `true`.
+
+    B. '2' < '12'
+
+    > The output is `false`. The strings `'2'` and `'12'` are compared lexicographically. Since the first character of `'2'`, namely `'2'`, is greater (lexicographically) than the first character of `'12'`, namely `'1'`, the output is `false`.
+
+    C. 2 == '2'
+
+    > The output is `true`. The `==` operator does type coercion, so the string `'2'` is converted to the integer `2`, and `2 == 2` is `true`.
+
+    D. 2 === '2'
+
+    > The output is `false`. The `===` operator checks for both value and type. Since `2` is an integer and `'2'` is a string, the output is `false`.
+
+    E. true == 2
+
+    > The output is `false`. `true` is converted to the integer `1`, and `1 == 2` is `false`.
+
+    F. true === Boolean(2)
+
+    > The output is `true`. `Boolean(2)` evaluates to `true` (since any non-zero number is truthy), and `true === true` is `true`.
+
+15. Explain the difference between the `==` and `===` operators.
+
+> The `==` operator compares the values of two data types after type coercion (if neccessary). However, the `===` operator compares both the values and the types of the two data types (without type coercion).
