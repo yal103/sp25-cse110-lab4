@@ -229,6 +229,28 @@ For each of the following questions, note down the output as well as a brief exp
 
 ![image16](images_pt2/image16.png)
 
+## Loops
+
+Loops in JavaScript are nothing fancy, the format for for, while, and do while being identical to most every programming language (the only difference being the fact you create your iterating variable with a JS keyword, typically let). There is one other JS specific type of loop that can be handy to know, the for...in loop. This will let you iterate over every property inside of an Object (much like the for...in loop used in Python).
+
 16. Given the above Object, write a for...in loop that will iterate through it and print out the value of the property if the property starts with the letter r, or if the value of that property is an odd number.
 
 > Refer to `part2-question16.js`.
+
+## Functions
+
+Like most programming languages, JavaScript has functions, simply written with the keyword "function". As seen above in the Data Types section, a function is also 1 of the 9 data types and can thus be stored in a variable and easily passed around like any other variable. Since functions can be stored in a variable, we can call the function using that variable at a later time in your program.
+
+This allows for one to return a function as a value, allowing these functions to be "called back to" at a later time (which can help if things are happening asynchronously, such as if you are awaiting a response from a server).
+
+![image17](images_pt2/image17.png)
+
+17.  If the function above is called with the following parameters **modifyArray([1,2,3], doSomething)**, what will be the result? Briefly walk through how you arrived at that result. Here we are passing in a function as a parameter, however we can also return a function from another function just as easily, you're encouraged to play around with callbacks as they are used heavily in frontend JS development.
+
+> The result of calling `modifyArray([1, 2, 3], doSomething)` is
+
+```
+[2, 4, 6]
+```
+
+> When `modifyArray` is called with inputs `array = [1, 2, 3]` and `callback = doSomething`, the function loops through each element of `array` and applies `doSomething` to each element. The `doSomething` function takes an integer and returns that integer multiplied by `2`. In the first iteration, `doSomething` is called on `array[0]`, which is `1`, and returns `2`. `2` is then pushed to `newArr`. In the second iteration, `doSomething` is called on `array[1]`, which is `2`, and returns `4`. `4` is then pushed to `newArr`. In the third iteration, `doSomething` is called on `array[2]`, which is `3`, and returns `6`. `6` is then pushed to `newArr`. After we complete the loop, we return `newArr`, which is `[2, 4, 6]`.
