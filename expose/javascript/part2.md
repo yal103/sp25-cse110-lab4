@@ -254,3 +254,29 @@ This allows for one to return a function as a value, allowing these functions to
 ```
 
 > When `modifyArray` is called with inputs `array = [1, 2, 3]` and `callback = doSomething`, the function loops through each element of `array` and applies `doSomething` to each element. The `doSomething` function takes an integer and returns that integer multiplied by `2`. In the first iteration, `doSomething` is called on `array[0]`, which is `1`, and returns `2`. `2` is then pushed to `newArr`. In the second iteration, `doSomething` is called on `array[1]`, which is `2`, and returns `4`. `4` is then pushed to `newArr`. In the third iteration, `doSomething` is called on `array[2]`, which is `3`, and returns `6`. `6` is then pushed to `newArr`. After we complete the loop, we return `newArr`, which is `[2, 4, 6]`.
+
+## setInterval(), setTimeout(), clearInterval()
+
+Since a lot of JavaScript will be running in real time while the user is on a webpage, you'll probably run into situations where you need some code to execute at consistent intervals, or once after a set period of time. That's where setTimeout(), setInterval(), and clearTimeout() come into play.
+
+![image18](images_pt2/image18.png)
+
+18. The above program only prints out the time once when executed. Modify this code such that the program prints out the *current* time every second.
+
+> Refer to `part2-question18.js`.
+
+![image19](images_pt2/image19.png)
+
+19. What is the output of the above code?
+
+> The output of the above code is
+
+```
+1
+4
+3
+2
+```
+
+> When `printNums` is called, `console.log(1)` runs immediately, printing `1`. Then, `setTimeout` is called to run `console.log(2)` `1000` milliseconds (1 second) after the main thread is finished. Then, `setTimeout` is called again to run `console.log(3)` `0` milliseconds after the main thread is finished. Then, `console.log(4)` runs immediately, printing `4`. Now, that the main thread is finished, we go to the event queue. Since `console.log(3)` was set to run `0` milliseconds after the main thread was finished, it runs next, printing `3`. Finally, after `1000` milliseconds, `console.log(2)` runs, printing `2`. Thereforem the final output is `1 4 3 2`, where each number is printed on a new line.
+
