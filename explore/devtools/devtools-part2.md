@@ -18,6 +18,10 @@ Answer the following questions:
 
 1. What was the bug?
 
+> The program was not returning the correct sum of the two input numbers. The issue was that the program was trying to add two strings rather than two numbers. The `document.getElementById("num1").value` and `document.getElementById("num2").value` calls were returning strings, and the program did not convert them to numbers before adding them. Instead, it concatenated the two input strings together. For example, if the user entered `'1'` and `'2'`, the program would return `'12'` rather than `3`.
+
 2. How would you fix it? Include a screenshot of your fix. Name it **fix.png** (or whatever image extension you would like to use).
 
-> Refer to `fix.png` in the `expand/screenshots` directory.
+> To the fix bug, I would convert the input strings to Numbers before adding them, using the `Number()` function to typecast `num1` and `num2` to numbers.
+
+> Refer to `fix.png` in the `expand/screenshots` directory for the fixed code.
