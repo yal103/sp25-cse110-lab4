@@ -226,3 +226,9 @@ For each of the following questions, note down the output as well as a brief exp
 15. Explain the difference between the `==` and `===` operators.
 
 > The `==` operator compares the values of two data types after type coercion (if neccessary). However, the `===` operator compares both the values and the types of the two data types (without type coercion).
+
+![image16](images_pt2/image16.png)
+
+16. Given the above Object, write a for...in loop that will iterate through it and print out the value of the property if the property starts with the letter r, or if the value of that property is an odd number.
+
+> Refer to `part2-question16.js`.
